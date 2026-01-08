@@ -6,7 +6,7 @@ export default function Login(){
     const [password,setPassword]=useState("")
     const handleLogin = async()=>{
         try {
-            const res = await fetch("http://localhost:3000/api/login",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/login",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

@@ -9,7 +9,7 @@ export default function Owners(){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        fetch("http://localhost:3000/api/owners",{
+        fetch("https://workasana-backend-seven.vercel.app/api/owners",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -22,7 +22,7 @@ export default function Owners(){
     const handleCreateOwner = async()=>{
         if(!ownerName.trim()) return alert("Owner name & email are required");
         try {
-            const res = await fetch("http://localhost:3000/api/owners",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/owners",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

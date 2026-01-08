@@ -10,7 +10,7 @@ export default function Project(){
     const [projectDesc,setProjectDesc]=useState("")
 
     useEffect(()=>{
-        fetch("http://localhost:3000/api/projects",{
+        fetch("https://workasana-backend-seven.vercel.app/api/projects",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -29,7 +29,7 @@ export default function Project(){
             return alert("Project name and description are required")
         }
         try {
-            const res = await fetch("http://localhost:3000/api/projects",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/projects",{
                 method:"POST",
                 headers:{"Content-Type":"application/json",Authorization:`Bearer ${localStorage.getItem("token")}`},
                 body:JSON.stringify({

@@ -7,7 +7,7 @@ export default function Signup(){
     const [password,setPassword]=useState("")
     const handleRegister = async()=>{
         try {
-            const res = await fetch("http://localhost:3000/api/register",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/register",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

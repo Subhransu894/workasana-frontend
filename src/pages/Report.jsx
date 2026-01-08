@@ -7,7 +7,7 @@ export default function Report(){
     const navigate = useNavigate()
     const [report,setReport]=useState(null)
     useEffect(()=>{
-        fetch("http://localhost:3000/api/reports/overview")
+        fetch("https://workasana-backend-seven.vercel.app/api/reports/overview")
         .then((res)=>res.json())
         .then(data=>{
             console.log("Report Data",data);

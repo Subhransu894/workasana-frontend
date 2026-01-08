@@ -53,7 +53,7 @@ export default function Dashboard(){
     ))
     //fetch project
     useEffect(()=>{
-        fetch("http://localhost:3000/api/projects",{
+        fetch("https://workasana-backend-seven.vercel.app/api/projects",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -67,7 +67,7 @@ export default function Dashboard(){
     },[])
     //fetch task
     useEffect(()=>{
-        fetch("http://localhost:3000/api/tasks",{
+        fetch("https://workasana-backend-seven.vercel.app/api/tasks",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -81,7 +81,7 @@ export default function Dashboard(){
     },[])
     //fetch team
     useEffect(()=>{
-        fetch("http://localhost:3000/api/teams",{
+        fetch("https://workasana-backend-seven.vercel.app/api/teams",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -95,7 +95,7 @@ export default function Dashboard(){
     },[])
     //fetch owners
     useEffect(()=>{
-        fetch("http://localhost:3000/api/owners",{
+        fetch("https://workasana-backend-seven.vercel.app/api/owners",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -117,7 +117,7 @@ export default function Dashboard(){
     const handleCreateProject = async()=>{
         if(!projectName.trim())return alert("Project name is required");
         try {
-            const res = await fetch("http://localhost:3000/api/projects",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/projects",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
@@ -133,7 +133,7 @@ export default function Dashboard(){
             
             //update UI instantly
             // setProjects((prev)=>[...prev,project])
-            const updatedProjects = await fetch("http://localhost:3000/api/projects",{
+            const updatedProjects = await fetch("https://workasana-backend-seven.vercel.app/api/projects",{
                 headers:{
                     Authorization:`Bearer ${localStorage.getItem("token")}`
                 }
@@ -157,7 +157,7 @@ export default function Dashboard(){
         if(!selectedTeam) return alert("Select a Team");
 
         try {
-            const res = await fetch("http://localhost:3000/api/tasks",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/tasks",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",

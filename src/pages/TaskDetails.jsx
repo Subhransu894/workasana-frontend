@@ -7,7 +7,7 @@ export default function TaskDetails(){
 
     const [task,setTask]=useState(null)
     useEffect(()=>{
-        fetch(`http://localhost:3000/api/tasks/${id}`,{
+        fetch(`https://workasana-backend-seven.vercel.app/api/tasks/${id}`,{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -37,7 +37,7 @@ export default function TaskDetails(){
             newStatus = "Completed"
         }
         try {
-            const res = await fetch(`http://localhost:3000/api/tasks/${id}/status`,
+            const res = await fetch(`https://workasana-backend-seven.vercel.app/api/tasks/${id}/status`,
                 {
                     method:"PUT",
                     headers:{
@@ -63,7 +63,7 @@ export default function TaskDetails(){
         const confirmDelete = window.confirm("Are you sure you want to delete this task ?")
         if(!confirmDelete) return;
         try {
-            const res = await fetch(`http://localhost:3000/api/tasks/${id}`,
+            const res = await fetch(`https://workasana-backend-seven.vercel.app/api/tasks/${id}`,
                 {
                     method:"DELETE",
                     headers:{

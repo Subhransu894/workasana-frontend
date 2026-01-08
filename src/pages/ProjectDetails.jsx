@@ -6,7 +6,7 @@ export default function ProjectDetails(){
     const [project,setProject]=useState(null)
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/api/projects/${id}`,{
+        fetch(`https://workasana-backend-seven.vercel.app/api/projects/${id}`,{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -20,7 +20,7 @@ export default function ProjectDetails(){
         const confirmDelete = window.confirm("Are you sure you want to delete this project?");
         if(!confirmDelete) return;
         try {
-            const res = await fetch(`http://localhost:3000/api/projects/${id}`,{
+            const res = await fetch(`https://workasana-backend-seven.vercel.app/api/projects/${id}`,{
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",

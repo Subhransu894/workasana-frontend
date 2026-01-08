@@ -9,7 +9,7 @@ export default function Team(){
     const [teamName,setTeamName] = useState("")
     const [teamDesc,setTeamDesc] = useState("")
     useEffect(()=>{
-        fetch("http://localhost:3000/api/teams",{
+        fetch("https://workasana-backend-seven.vercel.app/api/teams",{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
@@ -28,7 +28,7 @@ export default function Team(){
             return alert("Team Name and Description are required")
         }
         try {
-            const res = await fetch("http://localhost:3000/api/teams",{
+            const res = await fetch("https://workasana-backend-seven.vercel.app/api/teams",{
                 method:"POST",
                 headers:{"Content-Type":"application/json",Authorization:`Bearer ${localStorage.getItem("token")}`},
                 body: JSON.stringify({

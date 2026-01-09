@@ -19,11 +19,10 @@ export default function Signup(){
             }
             const data = await res.json()
 
-            //save token
-            localStorage.setItem("token",data.token);
+            alert("Registration Successful. Please Login.")
 
             //reset or go to dashboard
-            navigate("/dashboard")
+            navigate("/")
         } catch (error) {
             alert("Error registering user")
         }

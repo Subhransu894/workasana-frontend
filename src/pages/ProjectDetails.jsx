@@ -16,6 +16,12 @@ export default function ProjectDetails(){
         .catch((err)=>console.error(err))
     })
 
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
     const handleProjectDelete = async()=>{
         const confirmDelete = window.confirm("Are you sure you want to delete this project?");
         if(!confirmDelete) return;

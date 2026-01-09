@@ -19,6 +19,13 @@ export default function Project(){
         .then((data)=>setProject(data))
         .catch((err)=>console.error(err))
     },[])
+
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
     const filteredSearch = project.filter((p)=>
         p.name?.toLowerCase().includes(search.toLowerCase()) ||
         p.description?.toLowerCase().includes(search.toLowerCase())

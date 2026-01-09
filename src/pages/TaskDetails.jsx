@@ -17,6 +17,12 @@ export default function TaskDetails(){
         .catch((err)=>console.error(err))
     },[id])
 
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
     useEffect(()=>{
         if(task && task.status !== "Completed"){
             setPrevStatus(task.status)

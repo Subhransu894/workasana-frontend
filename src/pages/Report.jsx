@@ -14,6 +14,12 @@ export default function Report(){
             setReport(data)})
         .catch((err)=>console.error(err))
     },[])
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
     if(!report){
         return <p className="text-center">Loading...</p>
     }

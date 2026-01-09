@@ -18,6 +18,12 @@ export default function Team(){
         .then((data)=>setTeams(data))
         .catch((err)=>console.error(err))
     },[])
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
     const filteredTeams = teams.filter((t)=>(
         t.name.toLowerCase().includes(search.toLowerCase()) ||
         t.description.toLowerCase().includes(search.toLowerCase())
@@ -39,9 +45,10 @@ export default function Team(){
             if(!res.ok){
                 throw new Error("Failed to create Team")
             }
-            const newTeam = await res.json()
+            const response = await res.json()
+            const createdTeam = response.team || response
             //instant ui update
-            setTeams((prev)=>[...prev,newTeam])
+            setTeams((prev)=>[...prev,createdTeam])
 
             setTeamName("")
             setTeamDesc("")

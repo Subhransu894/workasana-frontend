@@ -18,6 +18,12 @@ export default function Owners(){
         .then((data)=>setOwners(data.owners || []))
         .catch((error)=>console.error(error))
     },[])
+     useEffect(()=>{
+        const token = localStorage.getItem("token")
+        if(!token){
+            navigate("/")
+        }
+    },[])
 
     const handleCreateOwner = async()=>{
         if(!ownerName.trim()) return alert("Owner name & email are required");
@@ -58,9 +64,9 @@ export default function Owners(){
                 <h2 className="border-bottom text-center mb-3">Owners</h2>
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <h4>Owner list</h4>
-                    <button className="btn btn-primary btn-sm" onClick={()=>setShowOwnerModal(true)}>
+                    {/* <button className="btn btn-primary btn-sm" onClick={()=>setShowOwnerModal(true)}>
                         New Owner
-                    </button>
+                    </button> */}
                 </div>
 
                 <div className="row g-3">
@@ -75,7 +81,7 @@ export default function Owners(){
                     ))}
                 </div>
             </main>
-            {showOwnerModal && (
+            {/* {showOwnerModal && (
                 <>
                     <div className="modal-backdrop fade show"></div>
                     <div className="modal fade show d-block" tabIndex="-1">
@@ -105,7 +111,7 @@ export default function Owners(){
                         </div>
                     </div>
                 </>
-            )}
+            )} */}
         </div>
     )
 }

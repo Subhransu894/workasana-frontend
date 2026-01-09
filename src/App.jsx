@@ -12,6 +12,7 @@ import Report from './pages/Report'
 import Owners from './pages/Owners'
 import TaskDetails from './pages/TaskDetails'
 import ProjectDetails from './pages/ProjectDetails'
+import ProjectTask from './pages/ProjectTask'
 
 function App() {
 
@@ -23,11 +24,12 @@ function App() {
           <Route path='/signup' element={<Signup/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/project' element={<Project/>} />
-           <Route path='/project/:id' element={<ProjectDetails/>} />
+          <Route path='/project/:id' element={<ProjectDetails/>} />
           <Route path='/team' element={<Team/>}/>
           <Route path='/report' element={<Report/>} />
           <Route path='/owners' element={<Owners/>}/>
           <Route path='/task/:id' element={<TaskDetails/>}/>
+          <Route path='/project-tasks' element={<ProjectTask/>} />
         </Routes>
       </Router>
     </>

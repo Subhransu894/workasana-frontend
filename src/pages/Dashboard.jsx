@@ -230,6 +230,12 @@ export default function Dashboard(){
                         <i className="bi bi-person-plus"></i>
                         <span>Owners</span>
                     </li>
+                    <li className="nav-item d-flex align-items-center gap-2"
+                        onClick={()=>navigate("/project-tasks")} style={{cursor:"pointer"}}
+                    >
+                        <i className="bi bi-list-check"></i>
+                        <span>Project Task</span>
+                    </li>
                     <li className="nav-item d-flex align-items-center gap-2">
                         <i className="bi bi-gear"></i>
                         <span>Setting</span>
